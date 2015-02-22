@@ -1,0 +1,389 @@
+@CHARSET "UTF-8";
+
+html,body {
+	font-family: "Lucida Sans Unicode", "Lucida Grande",Trebuchet MS, Arial ;
+	font-weight: normal;
+	-webkit-text-size-adjust: none;
+	margin: 0;
+	cursor: default
+}
+
+span {
+	font-weight: normal;
+}
+
+body {
+	background: #2b5464 ;
+	z-index: -1;
+}
+
+input, textarea, select {
+	font-family: inherit;
+	font-size: 12px;
+	font-weight: inherit;
+}
+
+div#ext-viewport {
+	background-color: #FFFFFF;
+	z-index: 3;
+}
+
+.x-layout-card {
+	position: relative;
+	overflow: visible;
+}
+
+.x-layout-card-item,.x-form .x-scroll-container {
+	background: transparent;
+}
+
+.x-webkit .x-layout-box.x-vertical > .x-layout-box-item.x-flexed {
+height: auto !important;
+}
+
+/* Field */
+.x-field .x-field-input, .x-field .x-input-el {
+width: 99%;
+}
+
+/* FieldSet */
+.x-form-fieldset {
+	margin: 0px;
+}
+
+.x-form-fieldset .x-form-fieldset-inner {
+	background: transparent;
+	padding: 0% 2%;
+	border:none;
+}
+
+.x-form-fieldset .x-field {
+	border-bottom: none;
+	background: transparent;
+}
+
+/* .x-field-mask,.x-form-field { */
+ .x-form-field {
+	border-bottom: #ddd solid 1px;
+	font-size: 12px;
+}
+
+
+.x-form-fieldset .x-form-label {
+	text-shadow: none;
+	color: #666;
+	font-size: .8em;
+	position: relative;
+	background-color: transparent;
+	z-index: 1;
+}
+
+.x-form-fieldset .x-form-label span {
+	font-weight: normal;
+}
+
+/* List */
+
+.x-list-normal .x-list-header {
+	background-color: rgba(43, 84, 100, 0.75);
+	color: #FFF;
+	background-image: none;
+	text-shadow: none;
+	border: none;
+}
+
+.x-list .x-list-item  {
+	background-image: none;
+	background-color: #FFFFFF;
+	text-shadow: none;
+}
+
+.x-list .x-list-item.x-item-selected , .x-list .x-list-item.x-item-selected.x-list-item-tpl {
+	background-image: none;
+	background-color: rgba(0, 128, 128, 0.2);
+	color: #000;
+	text-shadow: none;
+	border: none;
+}
+
+.x-list .x-list-disclosure {
+	background: rgb(0, 128, 128) none;
+	margin-top: 11%;
+}
+	
+.x-list .x-item-selected .x-list-disclosure:before {
+	color: rgb(0, 128, 128);
+}
+
+/* Button */
+
+.x-button {
+	background-color: rgba(0, 128, 128, 0.8);
+	color: #FFFFFF;
+	margin: 2%;
+	font-size: 85%;
+	padding: 4% 3%;
+	min-height: 50%;
+	max-height: 100%;
+	background-image: none;
+	border: none;
+	border-radius: 2px;
+}
+
+/* .x-button, .x-toolbar .x-button, */ 
+
+.x-button.x-button-back:after, .x-button.x-button-forward:after, .x-toolbar .x-button.x-button-back:after, .x-toolbar .x-button.x-button-forward:after {
+	background: none;
+}
+
+.x-button-label {
+	font-weight: normal;
+}
+
+.x-iconalign-left .x-button-label {
+	margin-left: .2em;
+	text-align: left;
+}
+
+.x-button .x-button-icon {
+	padding-right: 25%;
+	font-size: 85%;
+}
+
+/* Chart */
+
+.x-chart-watermark{
+	
+	opacity: 0.0;
+	z-index: 0;
+}
+/*  Menu  */
+
+div#toptitle {
+	background-image: none;
+	background-color: #2b5464;
+	font-size: 125%;
+	color: #eee;
+	border: none;
+	text-shadow: none;
+}
+
+x.toolbar-dark , .x-toolbar-dark.x-docked-top {
+	background-image: none;
+	background-color: #2b5464;
+	border:none;
+	box-shadow: 0px 2px 1px #CCCCCC;
+}
+
+div#searchentrylist .x-button {
+	background-color: rgba(0, 128, 128, 0.8);
+	color: #FFFFFF;
+	margin: 2%;
+	font-size: 85%;
+	padding: 4% 3%;
+	min-height: 50%;
+	max-height: 100%;
+	background-image: none;
+	border: none;
+	border-radius: 2px;
+	width: 30%;
+}
+
+.x-toolbar-dark .x-title {
+color: #fff;
+text-shadow: none; 
+}
+
+x.toolbar-dark .x-button, .x-toolbar-dark.x-docked-top .x-button {
+	background: transparent;
+	border: none;
+	color: #eee;
+	padding: 0px;
+	font-size: 175%;
+}
+
+/* Subtitle */
+
+div#subtitle {
+	color: #eee;
+	font-weight: normal;
+	text-shadow: none;
+	background-color: rgba(0, 128, 128, 0.8);
+	background-color: none;
+	background-image: none;
+	border: none;
+	border-radius: 0px;
+}
+
+div#subtitle .x-title {
+	font-weight: normal;
+	text-shadow: none;
+	font-size: 95%;
+}
+
+div#hauptmenu {
+	background-color: rgba(238, 238, 238, 1);
+	background-image: none;
+	z-index: 10;
+}
+
+div#hauptmenu .x-button {
+	background: none;
+	border: none;
+	/* color: rgb(0, 128, 128); */
+	color: #2b5464;
+	font-size: 100%;
+}
+
+div#hauptmenu .x-iconalign-left .x-button-label {
+	color: #999;
+	font-size: 90%;
+}
+
+div#bottomtoolbar {
+	background: #DDDDDD none repeat left top !important;
+	box-shadow: 0px 2px 2px 2px #333333;
+}
+
+div#bottomtoolbar .x-button {
+	background: rgba(0, 128, 128, 0.8);
+	border: none;
+	color: #FFFFFF;
+	font-size: 110%;
+}
+
+
+/* Entry View*/
+div#entryAction, div#productListAction, div#productAction, div#noteAction {
+	padding: 5px;
+	/* background-color: #2b5464; */ 
+	background-color: none;
+	width:100%;
+}
+
+div#entryAction .x-button-icon, div#productListAction .x-button-icon, div#productAction .x-button-icon {
+	font-size: 100%;
+}
+
+div#entry_save, div#product_gruppe {
+	float: right;
+}
+
+div#entry_cancel,  div#product_add {
+	float: left;
+}
+
+
+div#products .x-form-fieldset .x-form-fieldset-inner {
+	border: none;
+}
+
+div#entry_date .x-component-outer:after {
+	 font-family: icomoon; 
+	 content: '\e605';
+	 speak: none; /* Not to be trusted, but hey. */
+	 -webkit-mask-image: none;
+	 color: #2b5464;
+	 background-color: transparent;
+}
+
+/* Group & Product View */
+
+div#grouplistview div#groupname, div#productlistview div#productname, div#searchbar div#productname {
+	float: left; 
+	font-size: 90%;
+	margin-bottom: 2%;
+}
+
+div#grouplistview div#groupnumber,  div#productlistview div#productbasis, div#searchbar div#productbasis{
+	float: right;
+	margin-right: 5%;
+	font-weight: lighter;
+	font-size: 80%;
+}
+
+ div#productgroup, div#entry_date {
+ 	font-weight: normal;
+	font-size: 80%;
+	clear: both;
+	color: #999999;
+ }
+ 
+ div#entry_date {
+ 	font-weight: normal;
+	font-size: 80%;
+	color: #333333;
+ }
+
+div#entry_iron_value{
+	color: #333333;
+	float:right;
+}
+
+ span#eisenwert{
+	color: #AAAAAA;
+	font-size: 80%;
+}
+
+div#productbasis {
+	float: left;
+	max-width: '60%';
+}
+
+div#productbasis_unit {
+	float: right;
+	max-width: '40%'
+}
+
+/* ListView Notiz */
+div#note-insert-date {
+	color: #999999;
+	font-size: 80%;
+}
+
+div#note-date-to {
+	color: #666;
+}
+
+div#home_notiz_title .x-title{
+	color: #999;
+	font-weight: normal;
+	font-size: 80%;	
+}
+
+.home_notiz {
+padding: 2%;
+}
+
+/* Suche*/
+
+input.searchbox {
+	height: 35px !important;
+	border: none;
+	color: #DDDDDD
+}
+
+.x-field-search .x-field-input:before {
+	left: .1em;
+	top: .4em;
+	font-size: 19px;
+
+ 	font-family: icomoon;
+	 content: '\e60a';
+	 speak: none; /* Not to be trusted, but hey. */
+	 -webkit-mask-image: none;
+	 color: rgba(0, 128, 128, 1);
+	 background-color: transparent;
+}
+
+#searchbox .x-component-outer {
+	box-shadow:none;
+}
+
+.x-field-search .x-component-outer {
+	-webkit-border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	-ms-border-radius: 0.8em;
+	-o-border-radius: 0.8em;
+	border-radius: 0.8em;
+}

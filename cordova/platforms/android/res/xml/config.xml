@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ngani.EisenApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SQLitePlugin">
+        <param name="android-package" value="org.pgsqlite.SQLitePlugin" />
+    </feature>
+    <name>EisenApp</name>
+    <description>
+        Eine hybride App mit Sencha Touch und Cordova
+    </description>
+    <author email="diane@ngani.com" href="http//diane.ngani.com">
+        Diane Ngani
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="res/icon.png" />
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="backgroundColor" value="0xff2b5464" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="12" />
+    <preference name="android-targetSdkVersion" value="17" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="loadingDialog" value="EisenApp, Haben Sie etwa Geduld. Die Daten werden gerade geladen." />
+    <preference name="loadingPageDialog" value="EisenApp, Haben Sie etwa Geduld. Die Daten werden gerade geladen." />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+</widget>

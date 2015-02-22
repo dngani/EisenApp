@@ -1,0 +1,36 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+// Custom code goes here..
+
+// Examples of using the icon mixin:
+// @include icon('user');
+
+$base-gradient: 'none';
+
+@include icon-font('IcoMoon', inline-font-files(
+  'icomoon.eot', eot,
+  'icomoon.woff', woff,
+  'icomoon.ttf', truetype,
+  'icomoon.svg', svg
+));
+ 
+@include icon('icon-house', '\e608', 'IcoMoon' );
+@include icon('icon-pencil'  , '\e606', 'IcoMoon' );
+@include icon('icon-camera'  , '\e602', 'IcoMoon' );
+@include icon('icon-tag'  , '\e614', 'IcoMoon' );
+@include icon('icon-calendar'  , '\e605', 'IcoMoon' );
+@include icon('icon-statistics'  , '\e60b', 'IcoMoon' );
+@include icon('icon-food'  , '\e604', 'IcoMoon' );
+@include icon('icon-cross'  , '\e60e', 'IcoMoon' );
+@include icon('icon-list'  , '\e611', 'IcoMoon' );
+@include icon('icon-list2'  , '\e617', 'IcoMoon' );
+@include icon('icon-info'  , '\e616', 'IcoMoon' );
+@include icon('icon-trash'  , '\e601', 'IcoMoon' );
+@include icon('icon-checkmark'  , '\e60d', 'IcoMoon' );
+@include icon('icon-plus'  , '\e610', 'IcoMoon' );
+@include icon('icon-arrow-left'  , '\e612', 'IcoMoon' );
+@include icon('icon-search'  , '\e60a', 'IcoMoon' );

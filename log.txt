@@ -1,0 +1,32 @@
+Sencha Cmd v5.0.1.231
+[INF] Processing Build Descriptor : native
+[INF] Loading app json manifest...
+[WRN] C1000: Rhino Parse Warning (Trailing comma is not legal in an ECMA-262 object initializer =>         ]) -- C:\wamp\www\sencha\EisenApp\app\store\Group.js:39:9
+[WRN] C1000: Rhino Parse Warning (Trailing comma is not legal in an ECMA-262 object initializer => 	}) -- C:\wamp\www\sencha\EisenApp\app\view\GroupList.js:24:2
+[INF] Concatenating output to file C:\wamp\www\sencha\EisenApp\build\temp\production\EisenApp\sencha-compiler\cmd-packages.js
+[INF] writing content to C:\wamp\www\sencha\EisenApp\bootstrap.js
+[INF] appending content to C:\wamp\www\sencha\EisenApp\bootstrap.js
+[INF] appending content to C:\wamp\www\sencha\EisenApp\bootstrap.js
+[INF] appending content to C:\wamp\www\sencha\EisenApp\bootstrap.js
+[INF] Appending content to C:\wamp\www\sencha\EisenApp/bootstrap.json
+[WRN] C1014: callParent has no target (me.callParent in Ext.dataview.DataView.onAfterRender) -- C:\wamp\www\sencha\EisenApp\touch\src\dataview\DataView.js:893
+[WRN] C1014: callParent has no target (this.callParent in Ext.Decorator.setDisabled) -- C:\wamp\www\sencha\EisenApp\touch\src\Decorator.js:158
+[WRN] C1015: callSuper has no target (this.callSuper in Ext.chart.Legend.setScrollable) -- C:\wamp\www\sencha\EisenApp\touch\src\chart\Legend.js:117
+[WRN] C1014: callParent has no target (this.callParent in Ext.data.ArrayStore.loadData) -- C:\wamp\www\sencha\EisenApp\touch\src\data\ArrayStore.js:65
+[WRN] C1014: callParent has no target (this.callParent in Ext.fx.animation.Wipe.getData) -- C:\wamp\www\sencha\EisenApp\touch\src\fx\animation\Wipe.js:120:7
+[WRN] C1014: callParent has no target (this.callParent in Ext.slider.Toggle.setValue) -- C:\wamp\www\sencha\EisenApp\touch\src\slider\Toggle.js:64
+[INF] Concatenating output to file C:\wamp\www\sencha\EisenApp\cordova\www\app.js
+[INF] merging resources into C:\wamp\www\sencha\EisenApp\cordova\www\resources
+[INF] merged 0 resources into C:\wamp\www\sencha\EisenApp\cordova\www\resources
+[INF] merging resources into C:\wamp\www\sencha\EisenApp\cordova\www\resources
+[INF] merged 0 resources into C:\wamp\www\sencha\EisenApp\cordova\www\resources
+[INF] executing compass using system installed ruby runtime
+identical ../css/app.css 
+[INF] Copying page resources to C:\wamp\www\sencha\EisenApp\cordova\www
+[INF] Writing content to C:\wamp\www\sencha\EisenApp/cordova/www/microloader.js
+[INF] Appending content to C:\wamp\www\sencha\EisenApp/cordova/www/microloader.js
+[INF] Building output markup to C:\wamp\www\sencha\EisenApp/cordova/www/index.html
+[INF] Writing content to C:\wamp\www\sencha\EisenApp/cordova/www/index.html
+[INF] [Cordova] Attempting Cordova Build for platforms "android"
+[INF] [Cordova] Attempting Cordova Run for platforms "android"
+
