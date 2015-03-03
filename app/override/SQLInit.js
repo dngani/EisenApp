@@ -26,7 +26,7 @@ Ext.define('EisenApp.override.SQLInit', {
 		
 		    tx.executeSql(query);
 		    
-			query = "SELECT *  FROM IronConsumStatistics where 1 = 1;";
+			query = "SELECT *  FROM IronConsumStatistics where 1 = 1 ORDER BY entry_date ASC;";
 			
 			console.log(query);
 			tx.executeSql(query,[], function(tx, results){
@@ -46,26 +46,28 @@ Ext.define('EisenApp.override.SQLInit', {
 				    data.push(tmp);
 				}
 				
+//				alert(tmp.get('entry_date'));
 				Ext.getStore('IronConsumStatistics').setData(data);
 				
 				var nowTMP = new Date() , yesterdayTMP = Ext.Date.add(nowTMP, Ext.Date.DAY, -1);
-   				var now = Ext.Date.format(nowTMP, 'M j Y'), yesterday= Ext.Date.format(yesterdayTMP, 'M j Y');
+   				var now = Ext.Date.format(nowTMP, 'M d Y'), yesterday= Ext.Date.format(yesterdayTMP, 'M d Y');
    				
-				var rec = Ext.getStore('IronConsumStatistics').findRecord('entry_date', now, 0, true, false,true);
+				var rec = Ext.getStore('IronConsumStatistics').findRecord('entry_date', now+'', 0, true, false,false);
 				var heute, gestern;
 //				alert(rec.get('entry_date'));
-//				alert(now);
-//				alert(yesterday);
-				heute = (rec != -1) ? rec.get('entry_iron_value') : 0 ;
+//				alert(rec + now);
 				
-				rec = Ext.getStore('IronConsumStatistics').findRecord('entry_date', yesterday, 0, true, false,true);
-
-				gestern = (rec != -1) ? rec.get('entry_iron_value') : 0 ;
+				heute = (rec != null) ? rec.get('entry_iron_value') : 0 ;
+				
+				rec = Ext.getStore('IronConsumStatistics').findRecord('entry_date', yesterday, 0, true, false,false);
+				
+//				alert(rec + yesterday);
+				gestern = (rec != null) ? rec.get('entry_iron_value') : 0 ;
 				
 				Ext.getCmp('home').down('label[id=heute]').setHtml(heute+' mg');
 				Ext.getCmp('home').down('label[id=gestern]').setHtml(gestern+' mg');
 				
-			  }, function(e){
+			}, function(e){
 				  console.log("ERROR: " + e.message);
 			  }
 			  );
@@ -90,7 +92,7 @@ Ext.define('EisenApp.override.SQLInit', {
 			+"`group_name`	TEXT NOT NULL DEFAULT 'gid',"
 			+"`basis`	REAL NOT NULL DEFAULT '0,5',"
 			+"`basis_unit`	TEXT DEFAULT 'mg/100g',"
-			+"`insert_date`	TEXT NOT NULL DEFAULT '2014-01-01',"
+			+"`insert_date`	TEXT NOT NULL DEFAULT 'Wed Feb 18 2015 18:29:45 GMT+0100 (CET)',"
 			+"`active`	TEXT NOT NULL DEFAULT 'true',"
 		    +"PRIMARY KEY(product_id) );";
 		    
@@ -98,9 +100,9 @@ Ext.define('EisenApp.override.SQLInit', {
 		    
 		    
 		    //Alle vorhandene Produkten laden ...
-//ORDER BY name
+//
 		    
-			query = "SELECT *  FROM Product where 1 = 1 ;";
+			query = "SELECT *  FROM Product where 1 = 1 ORDER BY name;";
 			
 //			console.log(query);
 			tx.executeSql(query,[], function(tx, results){
@@ -126,7 +128,6 @@ Ext.define('EisenApp.override.SQLInit', {
 				
 				// .... und im Store Product hinzufügen
 				Ext.getStore('Product').setData(data);
-				Ext.getStore('Product').load();
 				  
 			  }, function(e){
 				  console.log("ERROR: " + e.message);
@@ -207,14 +208,8 @@ Ext.define('EisenApp.override.SQLInit', {
 	},
 
 	constructor: function(){
-		window.sqlitePlugin.importPrepopulatedDatabase({file: "test.sqlite", "importIfExists": false});
-		var db = window.sqlitePlugin.openDatabase('EisenApp.db','1.0','EisenApp Database', -1);
+		var db = window.sqlitePlugin.openDatabase('EisenApp.db');
 	    this.setDb(db);
-	},
-
-//	init: function(){
-//		var db = window.sqlitePlugin.openDatabase('EisenApp.db','1.0','EisenApp Database', -1);
-//	    this.setDb(db);
-//	}
+	}
 
 } );

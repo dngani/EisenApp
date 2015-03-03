@@ -64,8 +64,20 @@
 	    	console.log('onDeviceReady');
 	    	
 	        // Alle Daten werden einmal komplett geladen.
-			var sql = Ext.create('EisenApp.override.SQLInit',{});
-			sql.initializeDB();
+	        var start = new Date(), end;
+	        //alert('Start Import');
+	        window.sqlitePlugin.importPrepopulatedDatabase({file: "EisenApp.db", "importIfExists": false});
+	        end = new Date();
+	       // alert('End Import '+ (end-start));
+	        
+	        // wait 5s avant de call la ligne suivante
+	        if(window.sqlitePlugin){
+	        	//alert('Plugin');
+	        	var sql = Ext.create('EisenApp.override.SQLInit',{});
+				sql.initializeDB();
+	        }else{
+	        	alert('Plugin nicht active');
+	        }
 	        
 	    }
 	

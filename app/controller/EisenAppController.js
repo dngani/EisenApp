@@ -367,8 +367,8 @@ Ext
 									pte_id : id,
 									entry_id : currentEntry.data.entry_id+'',
 									product_id : newValues.product_id[c]+'',
-									entry_date : new Date(newValues.entry_date),
-									insert_date : new Date(),
+									entry_date : currentEntry.data.entry_date,
+									insert_date : currentEntry.data.insert_date,
 									quantity : newValues.quantity[c],
 									quantity_unit: currentEntry.data.quantity_unit+''
 								});
@@ -1098,5 +1098,6 @@ Ext
 				            fn: this.onBackAndroid,
 				            scope: this
 				        }]);
+						
 					}
 				});

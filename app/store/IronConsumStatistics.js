@@ -6,9 +6,10 @@ Ext.define('EisenApp.store.IronConsumStatistics', {
     requires: [
         'EisenApp.model.IronConsumStatistics'
     ],
- 
+    
     config: {
         autoLoad: true,
+        counter: 0,
 //        autoSync: true,
         model: 'EisenApp.model.IronConsumStatistics',
         storeId: 'IronConsumStatistics',
@@ -32,7 +33,7 @@ Ext.define('EisenApp.store.IronConsumStatistics', {
             },
             load: function() {
             	
-               if( Ext.os.deviceType !== 'Desktop'){
+               if( Ext.os.deviceType !== 'Desktop' && this.getCounter() != 0){
             	   var sqlinit=null;
 	   				if (null == Ext.getCmp('sqlinit')) {
 	   					sqlinit = Ext.create('EisenApp.override.SQLInit',{});
@@ -42,8 +43,11 @@ Ext.define('EisenApp.store.IronConsumStatistics', {
 	   				
 	   				sqlinit.generateView();
                }
-				
+				this.sort();
+                this.setCounter(1);
+                
                 console.log('Load: View Store count is ' + this.getCount());
+//                alert (this.getCounter());
             }
         }
         

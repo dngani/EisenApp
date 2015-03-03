@@ -8,6 +8,7 @@ Ext.define('EisenApp.store.Product', {
  
     config: {
         autoLoad: true,
+        loadCounter: 0,
         model: 'EisenApp.model.Product',
         storeId: 'Product',
 		sorters:[
@@ -26,6 +27,19 @@ Ext.define('EisenApp.store.Product', {
 	            console.log('Refresh: Product Store count is ' + this.getCount());
 	        },
 	        load: function() {
+	        	
+	            if ( this.getCount() == 0 && this.getLoadCounter() != 0 ){
+	            	var sqlinit=null;
+	   				if (null == Ext.getCmp('sqlinit')) {
+	   					sqlinit = Ext.create('EisenApp.override.SQLInit',{});
+	   				} else {
+	   					sqlinit = Ext.getCmp('sqlinit');
+	   				}
+	   				sqlinit.initializeProduct();
+	            }
+	            
+	            this.sort();
+	            this.setLoadCounter(1);
 	            console.log('Load: Product Store count is ' + this.getCount());
 	        }
 	    }

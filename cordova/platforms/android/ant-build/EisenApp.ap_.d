@@ -40,7 +40,7 @@ C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\js \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\plugins \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\css\index.css \
-C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\db\test.sqlite \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\db\EisenApp.db \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\img\logo.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\js\index.js \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\plugins\com.phonegap.plugins.sqlite \
@@ -82,6 +82,7 @@ C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resou
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\css\app.css \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\css\custom.css \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\scripts \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\startup \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\icon-spot~ipad.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon.png \
@@ -91,6 +92,7 @@ C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resou
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon~ipad.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon~ipad@2x.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\iTunesArtwork.png \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\scripts\importdb.js \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\startup\1496x2048.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\startup\1536x2008.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\startup\320x460.jpg \

@@ -24,7 +24,7 @@ Ext.define("EisenApp.model.Entry", {
 	    ],
 	  proxy: {
 	      type: 'sql',
-	      database: 'EisenApp'
+	      //database: 'EisenApp'
 	  } // Proxy
   } // Config
 });

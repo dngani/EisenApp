@@ -34,6 +34,9 @@ Ext.define('EisenApp.view.Main', {
 		        	     style: 'color:#EEE;'
 		            },		         
 					items: [
+							{ 
+							    xtype:'spacer'
+					        },
 							 { 
 					        	xtype:'panel',
 					        	layout:'vbox',
