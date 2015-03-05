@@ -6,7 +6,7 @@
             "cordova" : {
                 "config": {
                     // Uncomment the line below and add the platforms you wish to build for
-                    "platforms": "android windows8 ",
+                    "platforms": "android", //windows8
 
                     "id": "com.ngani.EisenApp",
                     "name": "EisenApp"
