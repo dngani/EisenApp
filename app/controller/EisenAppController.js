@@ -31,7 +31,8 @@ Ext
 							
 							searchView:'searchview',
 							searchBar:'searchbar',
-							searchBarField:'searchbarfield'
+							searchBarField:'searchbarfield',
+							searchEntryList:'searchentrylist'
 
 						},
 						control : {
@@ -111,6 +112,10 @@ Ext
 							    clearIconTap : 'onClearSearch',
 							    keyUp: 'onSearchKeyUp',
 							    searchFieldAction: 'onSearchFieldAction'
+							},
+							
+							searchEntryList : {
+								onDiscloseEntry:'onDiscloseTap'
 							}
 
 						}
@@ -275,7 +280,11 @@ Ext
 					// TASK : Search
 					onSearchCommand : function() {
 						console.log('onSearch');
+						
 						var searchView;
+						
+						Ext.getStore('Product').clearFilter();
+						Ext.getStore('Product').load();
 						
 						if (null == Ext.getCmp('searchview')) {
 							searchView = Ext.create('EisenApp.view.SearchView', {});
@@ -313,6 +322,11 @@ Ext
 //						console.log(currentEntry);
 
 						var entryStore = Ext.getStore('Entry');
+						
+						if ( entryStore.findRecord('entry_date', currentEntry.data.entry_date ) != null ){
+								Ext.Msg.alert('Achtung', 'Es wurde schon ein Eintrag mit dem gegebenen Datum angelegt. Geben Sie bitte ein neues Datum.', Ext.emptyFn);
+								return;
+							}
 						
 						var db = entryStore.getProxy().openDB();
 						
@@ -978,30 +992,30 @@ Ext
 					},
 					
 					/*********************************************************** Suche  *************************************************************************** */						
-					onSearchKeyUp: function(searchField) {
-						
-					  queryString = searchField.getValue();
-//					  alert('Suche: ' + queryString);
-					 
-					  var store = Ext.getStore('Product');
-					  store.clearFilter();
-					 
-					  if(queryString){
-					   var thisRegEx = new RegExp(queryString, "i");
-					   store.filterBy(function(record) {
-						    if (thisRegEx.test(record.get('name')) || thisRegEx.test(record.get('group_name'))) {
-						        return true;
-						    };
-						    return false;
-					   });
-					   store.load( ); // Load
-					  }
-					 },
+//					onSearchKeyUp: function(searchField) {
+//						
+//					  queryString = searchField.getValue();
+////					  alert('Suche: ' + queryString);
+//					 
+//					  var store = Ext.getStore('Product');
+//					  store.clearFilter();
+//					 
+//					  if(queryString){
+//					   var thisRegEx = new RegExp(queryString, "i");
+//					   store.filterBy(function(record) {
+//						    if (thisRegEx.test(record.get('name')) || thisRegEx.test(record.get('group_name'))) {
+//						        return true;
+//						    };
+//						    return false;
+//					   });
+//					   store.load( ); // Load
+//					  }
+//					 },
 					 
 					 onSearchFieldAction: function(searchField) {
 						
 						  queryString = searchField.getValue();
-		//					  alert('Suche: ' + queryString);
+//							  alert('Suche: ' + queryString);
 						 
 						  var store = Ext.getStore('Product');
 						  store.clearFilter();
@@ -1026,40 +1040,49 @@ Ext
 
 					 },
 					 
-					onDiscloseTap: function(record){
+					onDiscloseTap: function(list, record){
 	
 					  var queryString = record.get('product_id')+'';
 	
 					  var store = Ext.getStore('Entry');
+					 
 					  store.clearFilter();
 					 
-					  if(queryString){
+					   if(queryString){
 						   var thisRegEx = new RegExp(queryString, "i");
-//						   alert(thisRegEx);
-						   // Funktioniert nicht. Ein Bug in Sencha Touch anscheinend. 
-						   store.filterBy(function(item, id) {
-//							   alert(item.get('product_id'));
-							   if (thisRegEx.test(item.get('product_id'))) {
+						   store.setRemoteFilter(false);
+						   alert(store.getRemoteFilter());
+						   store.filterBy( function(item) {
+//							    alert(item.get('product_id'));
+							    if (thisRegEx.test(item.get('product_id'))) {
 							        return true;
 							    };
 							    return false;
-//							    return item.get('product_id') === queryString ;
-						   },
-						   this);
+						   });
+						  
+						   store.load(); // Load
+//						   alert(store.getCount());
 						   
-						   Ext.Msg.alert('','Leider funktioniert das Filter nicht.', Ext.emptyFn);
 						   Ext.getCmp('searchentrylist').down('label').setHtml(record.get('name'));
 						   Ext.getCmp('searchview').setActiveItem(1);
-					  }
+						}
 					  
 					 },
+					 
+					onDiscloseTapEntry : function(list, record) {
+					    
+					     alert('Entry Details');
+					     Ext.getCmp('searchview').setActiveItem(2);
+
+					},
+					
 					
 					/*********************************************************** Menu Bottom  *************************************************************************** */
 
 					// Menu - Bottom
 					onEditCommand : function() {
 						var active = this.getMain().getActiveItem();
-						if (active.id == 'entrylist') {
+						if (active.id == 'entrylist' ||active.id == 'searchentrylist' ) {
 							// console.log(this.getEntryView());
 							// this.fireEvent('onEditEntry',this);
 							this.editEntryCommand();

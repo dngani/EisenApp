@@ -10,7 +10,9 @@
     <content src="index.html" />
     <access origin="*" />
     
-    <icon src="res/icon.png" />
+     <platform name="android">
+              <icon src="../resources/icons/icon60x60.png" width="60" height="60" />
+     </platform>
     
      <!--
       If you do not want any permissions to be added to your app, add the

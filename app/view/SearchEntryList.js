@@ -10,7 +10,8 @@ Ext.define ('EisenApp.view.SearchEntryList', {
 		scrollable : true,
 		grouped: true,
 		pinHeaders: true,
-		allowDeselect:true,
+		allowDeselect: true,
+		onItemDisclosure: true,
 		layout : 'fit',
 		emptyText:'keine Einträge vorhanden.',
 		id : 'searchentrylist',
@@ -57,24 +58,16 @@ Ext.define ('EisenApp.view.SearchEntryList', {
 		        
 // 		Listeners für einzelne ListItem
 		listeners : {
-				select : function(view, record) {
-					console.log("onSelectItem");
-					this.onSelectItem(view, record);
-				},
-
-				deselect: function(record){
-					console.log("onDeSelectItem");
-				 	this.onDeSelectItem(record);
-				}
+				disclose : function(list, record) {
+					console.log("onDiscloseEntry");
+					this.onDisclose(list, record);
+			    }
 		}
     },
 	
-	onSelectItem: function(view, record) {
-	    this.fireEvent('selectItem', this, record);
-	},
-	
-	onDeSelectItem: function(view, record) {
-	    this.fireEvent('deselectItem', this, record);
+	onDisclose: function ( view, record ){
+		console.log("onDiscloseEntryTap");
+	    this.fireEvent('onDiscloseEntry', view, record);
 	}
 
 	

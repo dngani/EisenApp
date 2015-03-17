@@ -29,15 +29,15 @@ Ext.define ('EisenApp.view.SearchBar', {
 		  ], // Items
 		  
 		  listeners : {
-				disclose : function(view, record) {
+				disclose : function(list, record) {
 					console.log("onDisclose");
-					this.onDisclose(view, record);
+					this.onDisclose(list, record);
 				}
 	     }
 	},
 	
 	onDisclose: function ( view, record ){
-	    this.fireEvent('onDisclose', record);
+	    this.fireEvent('onDisclose', view, record);
 	}
 
 	

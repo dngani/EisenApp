@@ -1,5 +1,6 @@
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\EisenApp.ap_ \
  : C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable\icon.png \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable\icond.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-hdpi\icon.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-land-hdpi\screen.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-land-ldpi\screen.png \
@@ -15,6 +16,7 @@ C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-xhdpi\icon.pn
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\values\strings.xml \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\xml\config.xml \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable\icon.png \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable\icond.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable-hdpi\icon.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable-land-hdpi\screen.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable-land-ldpi\screen.png \
@@ -86,6 +88,7 @@ C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resou
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\startup \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\icon-spot~ipad.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon.png \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\icon60x60.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon@2x.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon_Android36.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\assets\www\resources\resources\icons\Icon_Android48.png \

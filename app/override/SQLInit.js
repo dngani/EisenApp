@@ -107,8 +107,10 @@ Ext.define('EisenApp.override.SQLInit', {
 //			console.log(query);
 			tx.executeSql(query,[], function(tx, results){
 				  var len = results.rows.length;
-				  var data = [];
+//				  var data = [];
 				  var tmp;
+				  var store = Ext.getStore('Product');
+				  store.removeAll();
 //					alert("Product table: " + len + " rows found.");
 				for (var i=0; i<len; i++){
 					var dat = new Date(results.rows.item(i).insert_date);
@@ -123,13 +125,16 @@ Ext.define('EisenApp.override.SQLInit', {
 				    	}
 				    );
 				    
-				    data.push(tmp);
+//				    data.push(tmp);
+				    store.add(tmp);
 				}
 				
 				// .... und im Store Product hinzufügen
-				Ext.getStore('Product').setData(data);
-				  
-			  }, function(e){
+//				Ext.getStore('Product').setData(data);
+				store.sync();
+//				alert("Product table: " + Ext.getStore('Product').getCount() + " rows found.");
+
+			}, function(e){
 				  console.log("ERROR: " + e.message);
 			  }
 			  );
@@ -147,15 +152,15 @@ Ext.define('EisenApp.override.SQLInit', {
 				
 //	        tx.executeSql('DROP TABLE IF EXISTS Entry');
 			var query = "CREATE TABLE IF NOT EXISTS `Entry` ( "
-				+"`pte_id`	BLOB NOT NULL UNIQUE,"
+				+"`pte_id`	TEXT NOT NULL UNIQUE,"
 				+"`entry_id`	TEXT NOT NULL, "
 				+"`product_id`	TEXT NOT NULL,"
 				+"`entry_date`	TEXT NOT NULL,"
 				+"`insert_date`	TEXT NOT NULL,"
-				+"`quantity`	REAL NOT NULL DEFAULT 100,"
+				+"`quantity`	REAL NOT NULL DEFAULT '100',"
 				+"`quantity_unit`	TEXT DEFAULT 'g',"
 				+"	PRIMARY KEY(pte_id),"
-				+" FOREIGN KEY(product_id) REFERENCES Product(product_id));";
+				+" FOREIGN KEY(`product_id`) REFERENCES Product(product_id));";
 				
 		    tx.executeSql(query);
 		    
@@ -167,6 +172,8 @@ Ext.define('EisenApp.override.SQLInit', {
 				  var len = results.rows.length;
 				  var data = [];
 				  var tmp;
+				  var store = Ext.getStore('Entry');
+				  store.removeAll();
 //					alert("Entry table: " + len + " rows found.");
 					
 				for (var i=0; i<len; i++){
@@ -186,11 +193,13 @@ Ext.define('EisenApp.override.SQLInit', {
 				    var errors= tmp.validate();
 //				    alert(errors.isValid());
 				    
-				    data.push(tmp);
+//				    data.push(tmp);
+				    store.add(tmp);
 				}
 				
 				// ... und im Store Entry hinzufügen
-				Ext.getStore('Entry').setData(data);
+//				Ext.getStore('Entry').setData(data);
+				store.sync();
 				
 			  }, function(e){
 				  console.log("ERROR: " + e.message);

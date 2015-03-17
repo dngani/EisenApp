@@ -19,9 +19,10 @@ Ext.define('EisenApp.view.SearchView', {
 			{
 				xtype:'searchentrylist'
 			},
-//			{
-//				xtype:'searchentrydetails'
-//			}
+			{
+				xtype:'entry'
+			}
+
 		]	
 	},
 	

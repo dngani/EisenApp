@@ -12,7 +12,7 @@ Ext.define("EisenApp.model.IronConsumStatistics", {
        
        proxy :{
     	   type: 'sql',
-    	  // database: 'EisenApp'
+    	   database: 'EisenApp'
        }
     }
 });

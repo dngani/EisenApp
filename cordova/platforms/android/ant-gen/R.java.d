@@ -1,5 +1,6 @@
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-gen\com\ngani\EisenApp\R.java \
  : C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable\icon.png \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable\icond.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-hdpi\icon.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-land-hdpi\screen.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-land-ldpi\screen.png \
@@ -15,6 +16,7 @@ C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\drawable-xhdpi\icon.pn
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\values\strings.xml \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\res\xml\config.xml \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable\icon.png \
+C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable\icond.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable-hdpi\icon.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable-land-hdpi\screen.png \
 C:\wamp\www\sencha\EisenApp\cordova\platforms\android\ant-build\res\drawable-land-ldpi\screen.png \
