@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ngani.EisenApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
-    <preference name="AndroidLaunchMode" value="singleTop" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
@@ -42,7 +41,7 @@
     <preference name="android-minSdkVersion" value="12" />
     <preference name="android-targetSdkVersion" value="17" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="loadingDialog" value="EisenApp, Haben Sie etwa Geduld. Die Daten werden gerade geladen." />
-    <preference name="loadingPageDialog" value="EisenApp, Haben Sie etwa Geduld. Die Daten werden gerade geladen." />
+    <preference name="SplashScreen" value="icon" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
 </widget>

@@ -40,8 +40,9 @@ Ext.define('EisenApp.store.Entry', {
 //		   				sqlinit.initializeEntry();
 //		            }
 		            
-		            this.sort();
+//		            this.sort();
 //		            this.setLoadCounter(this.getLoadCounter() + 1);
+//		        alert("Load Entry ..."+ this.getCount());
 		        console.log('Load: Entry Store count is ' + this.getCount());
 		    } // End Load-Funktion
 		}

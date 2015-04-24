@@ -205,6 +205,9 @@ Ext
 					onNewEntryCommand : function() {
 						console.log('onNewEntry');
 						
+						Ext.getStore('Product').clearFilter();
+						Ext.getStore('Product').load();
+						
 						var now = new Date();
 						var noteId = (now.getTime()).toString()
 								+ (this.getRandomInt(0, 1000)).toString();
@@ -323,7 +326,7 @@ Ext
 
 						var entryStore = Ext.getStore('Entry');
 						
-						if ( entryStore.findRecord('entry_date', currentEntry.data.entry_date ) != null ){
+						if ( entryStore.findRecord('entry_date', currentEntry.data.entry_date ) != null && !entryEditor.getEdit() ){
 								Ext.Msg.alert('Achtung', 'Es wurde schon ein Eintrag mit dem gegebenen Datum angelegt. Geben Sie bitte ein neues Datum.', Ext.emptyFn);
 								return;
 							}
@@ -410,7 +413,6 @@ Ext
 							            console.log("INSERT insertId: " + res.insertId + " ");
 								    
 							            entryStore.add(entry);
-//							            entryStore.sync();
 							            
 								  }, function(e) {
 								    console.log("INSERT Entry ERROR: " + e.message);
@@ -419,10 +421,10 @@ Ext
 							} // End For-Schleife
 							
 							
-							// Änderung in Entry-Store melden statt das Store aus der DB komplett neu zu laden
+//							// Änderung in Entry-Store melden statt das Store aus der DB komplett neu zu laden
 							entryStore.sync();
-							entryStore.sort();
-							// Das View-Table wird neu geladen. 
+							entryStore.load();
+//							// Das View-Table wird neu geladen. 
 							Ext.getStore('IronConsumStatistics').load();
 						
 						
@@ -481,6 +483,7 @@ Ext
 						// Get Data from Entry
 						   
 						var store = Ext.getStore('Entry');
+						store.load();
 //						alert('Filter Entry Count: '+store.getCount());
 						store.clearFilter();
 						
@@ -510,7 +513,7 @@ Ext
 							len = 1;
 						}
 						
-//						alert(product_ids);
+//						alert(product_ids.length);
 //						console.log(quantitys);
 						
 //						Die Daten werden für das Editor angepasst
@@ -973,17 +976,28 @@ Ext
 					    if(rec.data.note_type == 1){
 					    		
 //					    TODO delete ALL Thunbmail in Gallery 
-					    	window.resolveLocalFileSystemURI(rec.data.img_url, OnSuccess, onError);
-					    	
-					    	function OnSuccess(fileEntry){
-					    		Ext.Msg.alert('Achtung',fileEntry.toURL(), Ext.emptyFn);
-					    		fileEntry.remove( onSuccess, onError);
-				    		    function onSuccess(){ Ext.Msg.alert('','Das Foto wurde erfolgsreich gelöscht', Ext.emptyFn); }
-					    	}
-					    	
-					    	function onError(error){
-				    			alert(error.getMessage()) ;
-				    		}
+					       // alert(rec.data.img_url )
+					        if (rec.data.img_url == null ) {
+					        	// Die Datei wurde beispielweise von der Gallerie gelöscht.
+					        }
+					        else{
+					        	        
+						    	window.resolveLocalFileSystemURI(rec.data.img_url, OnSuccess, onError);
+						    	
+						    	function OnSuccess(fileEntry){
+						    		Ext.Msg.alert('Achtung',fileEntry.toURL(), Ext.emptyFn);
+						    		fileEntry.remove( onSuccess, onError);
+					    		    function onSuccess(){ Ext.Msg.alert('','Das Foto wurde erfolgsreich gelöscht', Ext.emptyFn); }
+					    		    function onError(error){ Ext.Msg.alert('','Das Foto wurde nicht erfolgsreich gelöscht'+ error.getMessage(), Ext.emptyFn); }
+						    	}
+						    	
+						    	function onError(error){
+						    		Ext.Msg.alert('','Das Foto wurde nicht erfolgsreich gelöscht'+ error.getMessage(), Ext.emptyFn); 
+					    			alert(error.getMessage()) ;
+					    		}
+					        	
+					        }
+				
 					   }
 					    
 					    noteStore.remove(rec);
@@ -1051,7 +1065,7 @@ Ext
 					   if(queryString){
 						   var thisRegEx = new RegExp(queryString, "i");
 						   store.setRemoteFilter(false);
-						   alert(store.getRemoteFilter());
+						  // alert(store.getRemoteFilter());
 						   store.filterBy( function(item) {
 //							    alert(item.get('product_id'));
 							    if (thisRegEx.test(item.get('product_id'))) {
@@ -1071,7 +1085,7 @@ Ext
 					 
 					onDiscloseTapEntry : function(list, record) {
 					    
-					     alert('Entry Details');
+//					     alert('Entry Details');
 					     Ext.getCmp('searchview').setActiveItem(2);
 
 					},

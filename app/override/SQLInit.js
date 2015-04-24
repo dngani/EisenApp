@@ -19,7 +19,7 @@ Ext.define('EisenApp.override.SQLInit', {
 		    // View erzeugen
 //			tx.executeSql('DROP VIEW IronConsumStatistics');
 			var query= "CREATE VIEW IF NOT EXISTS `IronConsumStatistics` AS "
-			+"SELECT e.entry_id, e.entry_date, CAST(TOTAL(p.basis*e.quantity/100.0) AS FLOAT) AS entry_iron_value "
+			+"SELECT e.entry_id, e.entry_date, CAST(TOTAL(p.basis*e.quantity/100.0) AS NUMERIC) AS entry_iron_value "
 			+"FROM Entry AS e JOIN Product AS p ON e.product_id = p.product_id "
 			+"GROUP BY e.entry_id "
 			+"ORDER BY e.entry_date ASC";
