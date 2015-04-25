@@ -10,9 +10,23 @@
     <content src="index.html" />
     <access origin="*" />
     
+    <icon src="res/icon.png" />
+    <preference name="SplashScreen" value="screen"/>
+    
      <platform name="android">
-              <icon src="../resources/icons/icon60x60.png" width="60" height="60" />
-     </platform>
+              <icon src="res/android/drawable-port-ldpi/icon.png" density="ldpi" />
+              <icon src="res/android/drawable-port-mdpi/icon.png" density="mdpi" />
+              <icon src="res/android/drawable-port-hdpi/icon.png" density="hdpi" />
+              <icon src="res/android/drawable-port-xhdpi/icon.png" density="xhdpi" />
+              <icon src="res/android/drawable-port-xxhdpi/icon.png" density="xxhdpi" />
+              
+		    <!-- you can use any density that exists in the Android project -->
+		    <splash src="res/android/drawable-port-hdpi/screen.png" density="port-hdpi"/>
+		    <splash src="res/android/drawable-port-ldpi/screen.png" density="port-ldpi"/>
+		    <splash src="res/android/drawable-port-mdpi/screen.png" density="port-mdpi"/>
+		    <splash src="res/android/drawable-port-xhdpi/screen.png" density="port-xhdpi"/>
+	</platform>
+    
     
      <!--
       If you do not want any permissions to be added to your app, add the
@@ -43,7 +57,7 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 	<!-- <preference name="loadingDialog"      value="EisenApp, Haben Sie etwa Geduld. Die Daten werden gerade geladen." /> 
 	<preference name="loadingPageDialog"      value="EisenApp, Haben Sie etwa Geduld. Die Daten werden gerade geladen." /> -->
-	 <preference name="SplashScreen" value="icon"/>
+	<preference name="SplashScreenDelay" value="10000"/>
 	<preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
 	<preference name="AndroidLaunchMode" value="singleTop"/>
 	

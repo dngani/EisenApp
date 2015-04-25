@@ -14,7 +14,15 @@
     <feature name="SQLitePlugin">
         <param name="android-package" value="org.pgsqlite.SQLitePlugin" />
     </feature>
-    <icon height="60" src="../resources/icons/icon60x60.png" width="60" />
+    <icon density="ldpi" src="res/android/drawable-port-ldpi/icon.png" />
+    <icon density="mdpi" src="res/android/drawable-port-mdpi/icon.png" />
+    <icon density="hdpi" src="res/android/drawable-port-hdpi/icon.png" />
+    <icon density="xhdpi" src="res/android/drawable-port-xhdpi/icon.png" />
+    <icon density="xxhdpi" src="res/android/drawable-port-xxhdpi/icon.png" />
+    <splash density="port-hdpi" src="res/android/drawable-port-hdpi/screen.png" />
+    <splash density="port-ldpi" src="res/android/drawable-port-ldpi/screen.png" />
+    <splash density="port-mdpi" src="res/android/drawable-port-mdpi/screen.png" />
+    <splash density="port-xhdpi" src="res/android/drawable-port-xhdpi/screen.png" />
     <name>EisenApp</name>
     <description>
         Eine hybride App mit Sencha Touch und Cordova
@@ -24,6 +32,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <icon src="res/icon.png" />
+    <preference name="SplashScreen" value="screen" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
@@ -41,7 +51,7 @@
     <preference name="android-minSdkVersion" value="12" />
     <preference name="android-targetSdkVersion" value="17" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="SplashScreen" value="icon" />
+    <preference name="SplashScreenDelay" value="10000" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     <preference name="AndroidLaunchMode" value="singleTop" />
 </widget>
